@@ -1,3 +1,5 @@
+import math
+
 salary = 5000  # Ежемесячная зарплата
 spend = 6000  # Траты за первый месяц
 months = 10  # Количество месяцев, которое планируется протянуть без долгов
@@ -7,10 +9,10 @@ total_deficit = 0
 current_spend = spend
 
 for month in range(months):
-    if month >0:
+    if month > 0:
         current_spend *= (1 + increase)
     monthly_deficit = current_spend - salary
     total_deficit += monthly_deficit
 
-money_capital = round(total_deficit)
-print(f"Подушка безопасности, чтобы протянуть {months} месяцев без долгов:", money_capital)
+money_capital = math.ceil(total_deficit)
+print(money_capital)
