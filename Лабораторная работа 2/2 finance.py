@@ -16,3 +16,4 @@ for month in range(months):
 
 money_capital = math.ceil(total_deficit)
 print(money_capital)
+
