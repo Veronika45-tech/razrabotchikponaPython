@@ -1,4 +1,4 @@
-def find_common_participants(group1, group2, delimiter='|'):
+def find_common_participants(group1, group2, delimiter=','):
     group1 = group1.split(delimiter)
     group2 = group2.split(delimiter)
 
