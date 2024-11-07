@@ -4,18 +4,18 @@ def count_letters(text):
     for char in text:
         if char.isalpha():
             lower_char = char.lower()
-            if lower_char in letter_count:
-                letter_count[lower_char] += 1
-            else:
-                letter_count[lower_char] = 1
+            letter_count[lower_char] = letter_count.get(lower_char, 0) + 1
+
     return letter_count
+
+
 def calculate_frequency(letter_count):
     total_letters = sum(letter_count.values())
     frequency = {}
 
-    for letter in letter_count.keys():
+    for letter in letter_count:
         freq = round(letter_count[letter] / total_letters, 2) if total_letters > 0 else 0.00
-        frequency[letter] = f"{freq:.2f}"
+        frequency[letter] = freq
 
     return frequency
 
@@ -60,6 +60,4 @@ letter_counts = count_letters(main_str)
 frequencies = calculate_frequency(letter_counts)
 
 for letter, freq in frequencies.items():
-    print(f"{letter}: {freq}")
-
-
+    print(f"{letter}: {freq:.2f}")
