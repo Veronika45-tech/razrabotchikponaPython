@@ -14,9 +14,8 @@ def calculate_frequency(letter_count):
     frequency = {}
 
     for letter in letter_count:
-        freq = round(letter_count[letter] / total_letters, 2) if total_letters > 0 else 0.00
+        freq = letter_count[letter] / total_letters if total_letters > 0 else 0.00
         frequency[letter] = freq
-
     return frequency
 
 
@@ -61,3 +60,4 @@ frequencies = calculate_frequency(letter_counts)
 
 for letter, freq in frequencies.items():
     print(f"{letter}: {freq:.2f}")
+
